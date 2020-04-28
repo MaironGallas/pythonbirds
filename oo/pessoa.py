@@ -18,5 +18,9 @@ if __name__ == '__main__':
     print(mairon.filhos)
     for filho in mairon.filhos:
         print(filho.nome)
-
+    mairon.sobrenome = 'Gallas'
+    print(mairon.sobrenome)
+    del mairon.filhos
+    print(mairon.__dict__)
+    print(renzo.__dict__)
 
