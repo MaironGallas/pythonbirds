@@ -116,14 +116,6 @@ class Direcao():
     def girar_a_esquerda(self):
         self.valor = self.rotacao_a_esquerda_dct[self.valor]
 
-
-
-
-class Carro:
-    def __init__(self, motor, direcao):
-        self.direcao = direcao
-        self.motor = motor
-
 class Motor():
     def __init__(self):
         self.velocidade = 0
@@ -134,3 +126,27 @@ class Motor():
     def frear(self):
         self.velocidade -= 2
         self.velocidade = max(0, self.velocidade) # velocidade vai ser o miaor valor dentro de 0 e velocidade
+
+
+class Carro:
+    def __init__(self, direcao, motor):
+        self.direcao = direcao
+        self.motor = motor
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        return self.motor.acelerar()
+
+    def frear(self):
+        return self.motor.frear()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def girar_a_direita(self):
+        return self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        return self.direcao.girar_a_esquerda()
